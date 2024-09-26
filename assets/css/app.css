@@ -1,0 +1,199 @@
+@import url(normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+html {
+  cursor: url("../images/cursor/moon-cursor.png"), auto;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+:root {
+  --span-color: #c4f82a;
+  --body-color: #1f1f1f;
+  --button-color: #333333;
+  --border-moon: #ffffff;
+  --button-color: #ffffff;
+  --animation: @keyframes lightBoxShadow {
+    50% {
+      box-shadow: rgba(255, 255, 255, 1) 0px 5px 15px;
+    }
+  }
+}
+
+/* Root for linear-gradient */
+
+:root {
+  /* Discord */
+  --discord-color-left: #e66465;
+  --discord-color-right: #9198e5;
+
+  /* Youtube */
+  --youtube-color-left: #991b1b;
+  --youtube-color-right: #f87171;
+
+  /* Twitch */
+  --twitch-color-left: #6b21a8;
+  --twitch-color-right: #a855f7;
+
+  /* Github */
+  --github-color-left: #020617;
+  --github-color-right: #334155;
+
+  /* Twitter (X) */
+  --twitter-color-left: #09090b;
+  --twitter-color-right: #f9fafb;
+}
+
+.moon {
+  border-radius: 100%;
+  border: 3px solid var(--border-moon);
+  width: 100px;
+  cursor: pointer;
+}
+
+body {
+  background-color: black;
+  color: white;
+  transition: 1s;
+}
+
+body.dark-mode {
+  background-color: #fffaa0;
+  color: black;
+  --span-color: #c4f82a;
+  --border-moon: #ffdd3c;
+  --body-color: #a7c7e7;
+  /* Discord */
+  --discord-color-left: #f49a9a;
+  --discord-color-right: #bfc7f5;
+
+  /* Youtube */
+  --youtube-color-left: #d23b3b;
+  --youtube-color-right: #fca5a5;
+
+  /* Twitch */
+  --twitch-color-left: #9b42d8;
+  --twitch-color-right: #d08aff;
+
+  /* Github */
+  --github-color-left: #1a1c29;
+  --github-color-right: #4b5563;
+
+  /* Twitter (X) */
+  --twitter-color-left: #2e2e33;
+  --twitter-color-right: #ffffff;
+  transition: 1s ease;
+  animation: var(--animation);
+}
+
+img {
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.profile-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--body-color);
+  border-radius: 10px;
+  text-align: center;
+  transition: 1s;
+  padding: 40px;
+  animation: darkBoxShadow 2s ease-out infinite;
+}
+
+span {
+  color: var(--span-color);
+  font-weight: 700;
+}
+
+.github,
+.discord,
+.youtube,
+.twitter,
+.twitch {
+  background-color: var(--button-color);
+  border-radius: 8px;
+  padding: 12px;
+  border: none;
+  margin: 12px;
+  width: 300px;
+  color: var(--button-color);
+  font-weight: 700;
+  cursor: pointer;
+  animation: gradient 10s ease infinite;
+  transition: 1s;
+}
+
+.discord {
+  background: linear-gradient(
+    -45deg,
+    var(--discord-color-left),
+    var(--discord-color-right)
+  );
+  background-size: 400% 400%;
+  transition: transform 0.3 ease;
+}
+
+.youtube {
+  background: linear-gradient(
+    -45deg,
+    var(--youtube-color-left),
+    var(--youtube-color-right)
+  );
+  background-size: 400% 400%;
+}
+
+.twitch {
+  background: linear-gradient(
+    -45deg,
+    var(--twitch-color-left),
+    var(--twitch-color-right)
+  );
+  background-size: 400% 400%;
+}
+
+.github {
+  background: linear-gradient(
+    -45deg,
+    var(--github-color-left),
+    var(--github-color-right)
+  );
+  background-size: 400% 400%;
+}
+
+.twitter {
+  background: linear-gradient(
+    -45deg,
+    var(--twitter-color-left),
+    var(--twitter-color-right)
+  );
+  background-size: 400% 400%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes darkBoxShadow {
+  50% {
+    box-shadow: rgba(167, 199, 231, 1) 0px 5px 15px;
+  }
+}
+
